@@ -7,9 +7,6 @@ router.use('/home', home);
 var contact_us = require('./contact_us'); 
 router.use('/contact_us', contact_us);
 
-var contact_us = require('./about_us'); 
-router.use('/about_us', about_us);
-
 var admin_login = require('./admin_login');
 router.use('/login', admin_login);
 var admin_logout = require('./admin_logout');
