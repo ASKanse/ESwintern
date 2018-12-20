@@ -21,9 +21,12 @@ router.post('/',function(req, res, next)
   else
   {
      var enquiry = {
-        subject:req.body.subject,
+        custtype:req.body.custtype,
         name:req.body.name,
-        description:req.body.desc,
+        email: req.body.emailadr,
+        contactnum: req.body.number,
+        company: req.body.company,
+        enquiry:req.body.enq
     };
     con.query("Insert into enquiry SET ? ;",enquiry,function(err,result)
     {

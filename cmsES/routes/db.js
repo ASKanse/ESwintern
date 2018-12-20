@@ -2,8 +2,8 @@ var mysql = require('mysql');
 var settings = {
     host: "localhost",
     user: "root",
-    password: "",
-    database: "ncom",
+    password: "@Equipshare1",
+    database: "EScms",
     multipleStatements: true
 
 };

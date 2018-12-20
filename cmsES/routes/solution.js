@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
-var func = require('../func.js');
-var edo=require('../edonomix.js');
-var con = require('../db');
+var func = require('./func.js');
+var edo=require('./edonomix.js');
+var con = require('./db');
 
 router.get('/',func.auth,function(req, res, next) 
 {         

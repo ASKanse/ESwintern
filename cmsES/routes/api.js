@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var contact_us = require('./home'); 
+var home = require('./home/home'); 
 router.use('/home', home);
 
 var contact_us = require('./contact_us'); 
@@ -26,7 +26,7 @@ router.use('/equipment',equipment);
 var enquiry = require('./enquiry/enquiry.js');
 router.use('/enquiry',enquiry);
 
-var enquiry = require('./solution');
+var solution = require('./solution');
 router.use('/solution',solution);
 
 module.exports = router;

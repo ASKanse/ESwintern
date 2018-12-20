@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var con = require('./db');
+var con = require('../db');
 const { sanitizeBody } = require('express-validator/filter');
 
 router.get('/', function(req, res, next) 
