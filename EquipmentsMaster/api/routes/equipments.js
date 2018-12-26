@@ -7,8 +7,7 @@ Models = require('../models/equip');
 router = express.Router();
 
 router.get('/',(req,res,next) => {
-  Models.Equip.find()
-  .select('_id UserID Catagory SubCatagory EquipmentName Manufacturer EqorTrk Hourly Daily Monthly Weight Param1 Param2 specification')
+  Models.UsrEquip.find()
   .exec()
   .then(info =>{
     res.status(200).json(info);
@@ -23,8 +22,7 @@ router.get('/',(req,res,next) => {
 
 router.get('/:equipId',(req,res,next) => {
   const id = req.params.equipId;
-  Models.Equip.findById(id)
-  .select('_id UserID Catagory SubCatagory EquipmentName Manufacturer EqorTrk Hourly Daily Monthly Weight Param1 Param2 specification')
+  Models.UsrEquip.findById(id)
   .exec()
   .then(info => {
     if(info){
