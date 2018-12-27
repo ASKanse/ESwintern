@@ -13,7 +13,7 @@ app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(bodyParser.text());
+app.use(bodyParser.text()); //https://stackoverflow.com/questions/12345166/how-to-force-parse-request-body-as-plain-text-instead-of-json-in-express
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");

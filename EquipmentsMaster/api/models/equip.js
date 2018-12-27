@@ -64,7 +64,15 @@ const fuelcardSchema = mongoose.Schema({
   IssueDate: String,
   IssueAmt: Number,
   FuelRate: Number,
-  InvoiceNum: Number
+  InvoiceNum: String
+});
+
+const EquipDuesSchema = mongoose.Schema({
+  _id: mongoose.Schema.Types.ObjectId,
+  EquipID: String,
+  UserInput: String,
+  LastDate: String,
+  NextDues: Number,
 });
 
 var Equip = mongoose.model('Equip', equipSchema);
@@ -72,11 +80,13 @@ var Cat = mongoose.model('Cat', CatSchema);
 var SubCat = mongoose.model('SubCat', SubCatSchema);
 var UsrEquip = mongoose.model('UsrEquip', userequipSchema);
 var Fuel = mongoose.model('Fuel', fuelcardSchema);
+var EquipDues = mongoose.model('EquipDues', EquipDuesSchema);
 
 module.exports = {
   Equip: Equip,
   Cat : Cat,
   SubCat : SubCat,
   UsrEquip : UsrEquip,
-  Fuel :Fuel
+  Fuel :Fuel,
+  EquipDues :EquipDues
 }
