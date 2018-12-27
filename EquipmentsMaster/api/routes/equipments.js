@@ -39,7 +39,7 @@ router.get('/:equipId',(req,res,next) => {
   });
 });
 
-router.post('/create/equipment',(req,res,next) => {
+router.post('/create/equip',(req,res,next) => {
   console.log('in post');
   Models.SubCat.find({SubCatagory: req.body.SubCatagory})
   .exec()
