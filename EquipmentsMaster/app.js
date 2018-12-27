@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 
 const adminequipRouter = require('./api/routes/equipments');
 const userequipRouter = require('./api/routes/userequips');
+const fuelnduesRouter = require('./api/routes/fuelndues');
 
 mongoose.connect('mongodb://equipsmas:equipsmas@es-equipsmaster-shard-00-00-jjqzv.mongodb.net:27017,es-equipsmaster-shard-00-01-jjqzv.mongodb.net:27017,es-equipsmaster-shard-00-02-jjqzv.mongodb.net:27017/test?ssl=true&replicaSet=ES-equipsmaster-shard-0&authSource=admin&retryWrites=true',{ useNewUrlParser: true });
 mongoose.Promise =  global.Promise;
@@ -12,6 +13,7 @@ app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(bodyParser.text());
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -29,6 +31,7 @@ app.use((req, res, next) => {
 console.log('entering routes');
 app.use('/admin/equipments',adminequipRouter);
 app.use('/user/equipments',userequipRouter);
+app.use('/user/equipments/iot',fuelnduesRouter);
 console.log('out of routes');
 
 app.use((req, res, next) => {

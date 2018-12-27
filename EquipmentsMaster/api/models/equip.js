@@ -57,14 +57,26 @@ const userequipSchema =  mongoose.Schema({
   specification: Object   //https://stackoverflow.com/questions/17497875/storing-json-object-in-mongoose-string-key
 });
 
+const fuelcardSchema = mongoose.Schema({
+  _id: mongoose.Schema.Types.ObjectId,
+  UserID: String,
+  Type: String,
+  IssueDate: String,
+  IssueAmt: Number,
+  FuelRate: Number,
+  InvoiceNum: Number
+});
+
 var Equip = mongoose.model('Equip', equipSchema);
 var Cat = mongoose.model('Cat', CatSchema);
 var SubCat = mongoose.model('SubCat', SubCatSchema);
 var UsrEquip = mongoose.model('UsrEquip', userequipSchema);
+var Fuel = mongoose.model('Fuel', fuelcardSchema);
 
 module.exports = {
   Equip: Equip,
   Cat : Cat,
   SubCat : SubCat,
-  UsrEquip : UsrEquip
+  UsrEquip : UsrEquip,
+  Fuel :Fuel
 }

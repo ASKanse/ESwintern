@@ -81,6 +81,12 @@ router.post('/:userid/create', (req,res,next) => {
         });
     });
   })
+  .catch(err => {
+      console.log(err);
+      res.status(500).json({
+        error: err
+      });
+  });
 });
 
 router.patch('/:userid/:equipId', (req, res, next) => {
