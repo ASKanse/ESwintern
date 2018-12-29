@@ -1,6 +1,6 @@
 # ESLABS101
 
-Equipshare Equipments master <br/>
+EquipmentsMaster --> APIs for equipment management for user and admin side also fuel and dues for user IOT<br/>
 APICalls --> How to communicate between two servers? Basic idea of how to implement microservices!<br/>
 EScms --> cms for the older version of website.<br/>
 
